@@ -1,0 +1,35 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns="sap.m"
+	xmlns:fc="sap.f" controllerName="utg.ui5-training.controller.Login" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page id="loginPage" title="{i18n>title}" showHeader="false" showFooter="false">
+				<customHeader/>
+				<content>
+					<Panel id="quickViewCardContainer" width="auto" height="100%">
+						<content>
+							<FlexBox height="100%" alignItems="Center" justifyContent="Center">
+								<items>
+									<fc:Card>
+										<fc:content>
+											<f:SimpleForm title="Login to App" editable="true" layout="ResponsiveGridLayout" tooltip="Login to App">
+												<f:content>
+													<Label xmlns="sap.m" text="User Name"/>
+													<Input xmlns="sap.m" id="username" type="Email" placeholder="Enter User Mail" change="validateEmail"/>
+													<Label xmlns="sap.m" text="Password"/>
+													<Input xmlns="sap.m" id="password" type="Password" placeholder="Enter Password"/>
+													<Label xmlns="sap.m"/>
+													<Button xmlns="sap.m" type="Emphasized" text="Log In" press="onPressLogin"/>
+													<Link xmlns="sap.m" text="Forgot Password?" press="handleLinkPress"/>
+												</f:content>
+											</f:SimpleForm>
+										</fc:content>
+									</fc:Card>
+								</items>
+							</FlexBox>
+						</content>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,192 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "utg.ui5-training",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"northwindRemote": {
+				"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "utg.ui5-training.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "loginPage"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "utg.ui5-training.i18n.i18n"
+				}
+			},
+			"northwindODataModel": {
+				"dataSource": "northwindRemote"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "utg.ui5-training.view",
+				"controlAggregation": "pages",
+				"controlId": "appControl",
+				"clearControlAggregation": false,
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"name": "RouteApp",
+					"pattern": "RouteApp",
+					"target": [
+						"TargetApp"
+					]
+				},
+				{
+					"name": "Login",
+					"pattern": "",
+					"target": "Login"
+				},
+				{
+					"name": "Home",
+					"pattern": "home",
+					"target": "Home"
+				},
+				{
+					"name": "EmpLandingPage",
+					"pattern": "landing",
+					"target": [
+						"Layout",
+						"EmpLandingPage"
+					]
+				},
+				{
+					"name": "Employees",
+					"pattern": "emp/view",
+					"target": [
+						"Employees"
+					]
+				},
+				{
+					"name": "Products",
+					"pattern": "products",
+					"target": [
+						"Layout",
+						"Products"
+					]
+				}
+			],
+			"targets": {
+				"TargetApp": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "App",
+					"viewName": "App"
+				},
+				"notFound": {
+					"viewId": "notFound",
+					"viewName": "NotFound",
+					"transition": "show"
+				},
+				"Login": {
+					"viewType": "XML",
+					"viewName": "Login"
+				},
+				"Home": {
+					"viewType": "XML",
+					"viewName": "Home"
+				},
+				"Layout": {
+					"viewType": "XML",
+					"viewName": "Layout"
+				},
+				"EmpLandingPage": {
+					"viewType": "XML",
+					"viewName": "EmpLandingPage",
+					"parent": "Layout",
+					"controlId": "pageContainer",
+					"controlAggregation": "pages"
+				},
+				"Employees": {
+					"viewType": "XML",
+					"viewName": "Employees",
+					"parent": "Layout",
+					"controlId": "pageContainer",
+					"controlAggregation": "pages"
+				},
+				"NotFound": {
+					"viewType": "XML",
+					"viewName": "NotFound"
+				},
+				"Products": {
+					"viewType": "XML",
+					"viewName": "Products",
+					"parent": "Layout",
+					"controlId": "pageContainer",
+					"controlAggregation": "pages"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

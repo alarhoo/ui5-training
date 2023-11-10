@@ -1,0 +1,78 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:tnt="sap.tnt"
+	controllerName="utg.ui5-training.controller.Layout" xmlns:html="http://www.w3.org/1999/xhtml">
+	<tnt:ToolPage id="toolPage">
+		<!--Main Header-->
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Button id="sideNavigationToggleButton" tooltip="Menu" icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+				<Button id="homeButton" tooltip="Home" icon="sap-icon://home" type="Transparent" press="onHomeButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+				<ToolbarSpacer/>
+				<Button text="Northwind App" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low"/>
+					</layoutData>
+				</Button>
+				<ToolbarSpacer>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px"/>
+					</layoutData>
+				</ToolbarSpacer>
+				<Button text="Andy Dufresne" tooltip="The only innocent man in Shawshank" type="Transparent" press="handleUserNamePress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<!--Side Content-->
+		<tnt:sideContent>
+			<tnt:SideNavigation expanded="true" selectedKey="emp" itemSelect="onItemSelect">
+				<tnt:NavigationList>
+					<tnt:NavigationListItem text="Employees" icon="sap-icon://employee" expanded="false" key="emp" href="#/landing">
+						<!--<core:Icon src="sap-icon://syringe" class="size1" color="#031E48"></core:Icon>-->
+						<tnt:NavigationListItem text="Register Employee" icon="sap-icon://add-employee" key="empRegister" href="#/emp/register"/>
+						<tnt:NavigationListItem text="View Employee" icon="sap-icon://personnel-view" key="empView" href="#/emp/view" />
+					</tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Products" icon="sap-icon://accidental-leave" expanded="false" key="products" href="#/products">
+						<tnt:NavigationListItem text="Add Products" icon="sap-icon://add-activity" key="productsAdd"/>
+						<tnt:NavigationListItem text="View Products" icon="sap-icon://detail-view" key="productsView"/>
+					</tnt:NavigationListItem>
+					<!--<tnt:NavigationListItem text="Leaves" icon="sap-icon://accidental-leave" expanded="false" key="leave">-->
+					<!--	<tnt:NavigationListItem text="Add Leave Record" icon="sap-icon://add-activity" key="leaveAdd"/>-->
+					<!--	<tnt:NavigationListItem text="View Leaves" icon="sap-icon://detail-view" key="leaveView"/>-->
+					<!--</tnt:NavigationListItem>-->
+					<!--<tnt:NavigationListItem text="Holidays" icon="sap-icon://flight" expanded="false" key="holiday">-->
+					<!--	<tnt:NavigationListItem text="Add Holiday" icon="sap-icon://add-activity-2" key="holidayAdd"/>-->
+					<!--	<tnt:NavigationListItem text="View Holidays" icon="sap-icon://table-view" key="holidayView"/>-->
+					<!--</tnt:NavigationListItem>-->
+				</tnt:NavigationList>
+				<!--<tnt:NavigationList items="{path: '/navigation'}">-->
+				<!--	<tnt:NavigationListItem text="{title}" icon="{icon}" enabled="{enabled}" expanded="{expanded}" items="{items}" key="{key}">-->
+				<!--		<tnt:NavigationListItem text="{title}" key="{key}" enabled="{enabled}"></tnt:NavigationListItem>-->
+				<!--	</tnt:NavigationListItem>-->
+				<!--</tnt:NavigationList>-->
+				<tnt:fixedItem>
+					<tnt:NavigationList>
+						<tnt:NavigationListItem text="Settings" icon="sap-icon://settings"></tnt:NavigationListItem>
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<!--Main Content-->
+		<tnt:mainContents>
+			<App id="pageContainer">
+				<pages>
+					<!--Main Contents goes here...-->
+				</pages>
+			</App>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

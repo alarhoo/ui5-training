@@ -1,0 +1,30 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="utg.ui5-training.controller.Employees"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="View Employees">
+				<content>
+					<List items="{northwindODataModel>/Employees}" headerText="Employees">
+						<items>
+							<ObjectListItem icon="sap-icon://employee" title="{northwindODataModel>FirstName} {northwindODataModel>LastName}" press="onItemSelected"
+								number="{northwindODataModel>EmployeeID}" type="Active">
+								<firstStatus>
+									<ObjectStatus title="{northwindODataModel>Region}" text="{northwindODataModel>City} {northwindODataModel>PostalCode}"/>
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{northwindODataModel>Title}, {northwindODataModel>City}"/>
+									<ObjectAttribute text="{northwindODataModel>HomePhone}"/>
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+					<!--<List id="ShortProductList" headerText="Products" items="{northwindODataModel>/Employees}">-->
+					<!--	<items>-->
+					<!--		<StandardListItem title="{northwindODataModel>Title}" description="{northwindODataModel>FirstName}" icon="data:image/png;base64,{northwindODataModel>Photo}" iconDensityAware="false" iconInset="false"/>-->
+					<!--	</items>-->
+					<!--</List>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

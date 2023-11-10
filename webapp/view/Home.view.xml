@@ -1,0 +1,35 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f"
+	controllerName="utg.ui5-training.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml">
+	<f:ShellBar title="Northwind App" secondTitle="Work Simplified" homeIcon="./asset/img/uplan-logo.png" showCopilot="true" showNotifications="true"
+		notificationsNumber="2">
+		<!--<menu>-->
+		<!--	<Menu>-->
+		<!--		<MenuItem text="Flight booking" icon="sap-icon://flight"/>-->
+		<!--		<MenuItem text="Car rental" icon="sap-icon://car-rental"/>-->
+		<!--	</Menu>-->
+		<!--</menu>-->
+		<f:profile>
+			<f:Avatar initials="A"/>
+		</f:profile>
+	</f:ShellBar>
+	<Page title="Title" showHeader="false">
+		<content>
+			<FlexBox height="100%" alignItems="Center" justifyContent="Center">
+				<items>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Employees" subheader="Manage Employees"
+						press="onPressHR">
+						<TileContent footer="Manage Employees">
+							<ImageContent src="sap-icon://customer"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Products" subheader="Manage Products"
+						press="onPressAdmin">
+						<TileContent footer="Manage Products">
+							<ImageContent src="sap-icon://key-user-settings"/>
+						</TileContent>
+					</GenericTile>
+				</items>
+			</FlexBox>
+		</content>
+	</Page>
+</mvc:View>

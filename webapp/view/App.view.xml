@@ -1,0 +1,6 @@
+<mvc:View controllerName="utg.ui5-training.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="appControl">
+		</App>
+	</Shell>
+</mvc:View>
